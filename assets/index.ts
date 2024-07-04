@@ -6,6 +6,9 @@ import macncheeseImg from "@/assets/images/macncheese.jpg";
 import pizzaImg from "@/assets/images/pizza.jpg";
 import schnitzelImg from "@/assets/images/schnitzel.jpg";
 import tomatoSaladImg from "@/assets/images/tomato-salad.jpg";
+import mealIcon from "@/assets/icons/meal.png";
+import communityIcon from "@/assets/icons/community.png";
+import eventsIcon from "@/assets/icons/events.png";
 
 export const logo = {
   src: logoImg,
@@ -45,4 +48,19 @@ export const schnitzel = {
 export const tomatoSalad = {
   src: tomatoSaladImg,
   alt: "A delicious tomato salad",
+};
+
+export const meal = {
+  src: mealIcon,
+  alt: "A delicious meal",
+};
+
+export const community = {
+  src: communityIcon,
+  alt: "A crowd of people, cooking",
+};
+
+export const events = {
+  src: eventsIcon,
+  alt: "A crowd of people at a cooking event",
 };

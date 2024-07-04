@@ -1,9 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
-import { MainHeaderBackground } from "./main-header-background";
+import { MainHeaderBackground } from "./components/main-header-background";
 import { logo } from "@/assets";
 
 import classes from "./main-header.module.css";
+import { NavLinkItem } from "./components/nav-link";
 
 const navItems = [
   { href: "/meals", text: "Browse Meals" },
@@ -24,9 +25,9 @@ export const MainHeader = () => {
         <nav className={classes.nav}>
           <ul>
             {navItems.map(({ href, text }) => (
-              <li key={href}>
-                <Link href={href}>{text}</Link>
-              </li>
+              <NavLinkItem key={href} href={href}>
+                {text}
+              </NavLinkItem>
             ))}
           </ul>
         </nav>
