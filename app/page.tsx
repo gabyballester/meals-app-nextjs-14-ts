@@ -1,22 +1,61 @@
 import Link from "next/link";
+import { ImageSlideshow } from "@/components";
+
+import classes from "./page.module.css";
 
 const links = [
-  { href: "/meals", text: "Meals" },
-  { href: "/meals/share", text: "Share" },
-  { href: "/community", text: "Community" },
+  { href: "/community", text: "Join the Community" },
+  { href: "/meals", text: "Explore Meals" },
 ];
 
 export default function Home() {
   return (
-    <main>
-      <h1 style={{ color: "white", textAlign: "center" }}>
-        Time to get started!
-      </h1>
-      {links.map(({href, text}) => (
-        <p key={href}>
-          <Link href={href}>{text}</Link>
-        </p>
-      ))}
-    </main>
+    <>
+      <header className={classes.header}>
+        <div className={classes.slideshow}>
+          <ImageSlideshow />
+        </div>
+        <div>
+          <div className={classes.hero}>
+            <h1>Meals for Foodies</h1>
+            <p>Taste & share food from all over the world.</p>
+          </div>
+          <div className={classes.cta}>
+            {links.map(({ href, text }) => (
+              <Link key={href} href={href}>
+                {text}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </header>
+      <main>
+        <section className={classes.section}>
+          <h2>How it works</h2>
+          <p>
+            NextLevel Food is a platform for foodies to share their favorite
+            recipes with the world. It&apos;s a place to discover new dishes,
+            and to connect with other food lovers.
+          </p>
+          <p>
+            NextLevel Food is a place to discover new dishes, and to connect
+            with other food lovers.
+          </p>
+        </section>
+
+        <section className={classes.section}>
+          <h2>Why NextLevel Food?</h2>
+          <p>
+            NextLevel Food is a platform for foodies to share their favorite
+            recipes with the world. It&apos;s a place to discover new dishes,
+            and to connect with other food lovers.
+          </p>
+          <p>
+            NextLevel Food is a place to discover new dishes, and to connect
+            with other food lovers.
+          </p>
+        </section>
+      </main>
+    </>
   );
 }

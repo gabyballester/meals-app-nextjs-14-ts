@@ -1,9 +1,9 @@
 import Link from "next/link";
-
-import classes from "./main-header.module.css";
 import Image from "next/image";
 import { MainHeaderBackground } from "./main-header-background";
-import { logo } from "@/assets/images";
+import { logo } from "@/assets";
+
+import classes from "./main-header.module.css";
 
 const navItems = [
   { href: "/meals", text: "Browse Meals" },
@@ -17,7 +17,7 @@ export const MainHeader = () => {
 
       <header className={classes.header}>
         <Link href="/" className={classes.logo}>
-          <Image src={logo} alt="A plate with foot on it" />
+          <Image src={logo.src} alt={logo.alt} />
           Meals Food
         </Link>
 
