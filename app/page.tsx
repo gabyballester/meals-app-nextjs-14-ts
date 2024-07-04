@@ -1,9 +1,22 @@
+import Link from "next/link";
+
+const links = [
+  { href: "/meals", text: "Meals" },
+  { href: "/meals/share", text: "Share" },
+  { href: "/community", text: "Community" },
+];
+
 export default function Home() {
   return (
     <main>
-      <img src="/logo.png" alt="Fork and spoon surrounded by magic sparkles." />
-      <h1>Welcome to this Meal App!</h1>
-      <p>🔥 Let&apos;s get started! 🔥</p>
+      <h1 style={{ color: "white", textAlign: "center" }}>
+        Time to get started!
+      </h1>
+      {links.map(({href, text}) => (
+        <p key={href}>
+          <Link href={href}>{text}</Link>
+        </p>
+      ))}
     </main>
   );
 }
