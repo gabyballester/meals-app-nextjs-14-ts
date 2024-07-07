@@ -12,7 +12,15 @@ Meal App is an educational project to demonstrate knowledge of Next.js. It allow
 npm install
 ```
 
-2. Run the development server: You can start the development server using one of the following commands:
+2. Populate the database: To populate the database, execute the following command:
+
+```bash
+node initdb.js
+```
+
+Which generates meals.db containing the data itself.
+
+3. Run the development server: You can start the development server using one of the following commands:
 
 ```bash
 npm run dev
@@ -20,14 +28,22 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Database
+
+This application uses SQLite as its database. Ensure that the SQLite database is properly set up before running the application.
+
+**Note:** Image files must be stored in assets and also in public allowing the db url access the folder based on the url provided.
+
 ## Code Quality and Best Practices
 
 The platform ensures high code quality and follows best practices.
 
 ## Base libraries used
 
-- **Next.js** as framework
+- **Next.js** as framework.
 - **React** as the UI library in the background.
+- **SQLite** as the database to provide API data.
+- **Database Interaction** SQL Queries to interact with the SQLite database, allowing efficient CRUD operations.
 
 ## Components and styling
 

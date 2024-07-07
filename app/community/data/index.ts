@@ -1,5 +1,5 @@
 import { meal, community, events } from "@/assets";
-import { PerkData } from "../components/perk-item";
+import { PerkData } from "@/types";
 
 export const perksData: PerkData[] = [
   { src: meal.src, alt: meal.alt, description: "Share & discover recipes" },
