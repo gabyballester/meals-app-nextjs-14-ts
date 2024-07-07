@@ -40,14 +40,16 @@ The platform ensures high code quality and follows best practices.
 
 ## Base libraries used
 
-- **Next.js** as framework.
-- **React** as the UI library in the background.
-- **SQLite** as the database to provide API data.
-- **Database Interaction** SQL Queries to interact with the SQLite database, allowing efficient CRUD operations.
+- **Next.js:** As the chosen framework to build with.
+- **React:** As the UI library in the background.
+- **TypeScript:** Adding strong static types and advanced features to improve large-scale development and code maintainability.
+- **SQLite:** As the database to provide API data.
+- **Database Interaction:** SQL Queries to interact with the SQLite database, allowing efficient CRUD operations.
 
-## Components and styling
+## UX/UI
 
-Currently, the application uses global CSS styles and CSS modules for styling. Make sure to install all necessary dependencies before starting development.
+- **CSS Modules:** The application utilizes global CSS styles and CSS Modules for precise styling on each component that requires it.
+- **Suspense:** Implemented for managing loading states to enhance user experience.
 
 ## Contributions
 
