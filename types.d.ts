@@ -12,4 +12,7 @@ export type MealType = {
   image: string;
   summary: string;
   creator: string;
+  instructions: string;
+  creator: string;
+  creator_email: string;
 };

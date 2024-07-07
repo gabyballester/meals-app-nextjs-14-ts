@@ -1,5 +1,5 @@
 import { MealsGrid } from "@/components/meals";
-import { getMeals } from "@/lib/meals";
+import { getMeals } from "@/lib";
 import { MealType } from "@/types";
 
 export const MealsFetch = async () => {
