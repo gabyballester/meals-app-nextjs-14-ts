@@ -53,6 +53,16 @@ The platform ensures high code quality and follows best practices.
 - **CSS Modules:** The application utilizes global CSS styles and CSS Modules for precise styling on each component that requires it.
 - **Suspense:** Implemented for managing loading states to enhance user experience.
 
+## Special Features
+
+### Form Management and Validation
+
+The application leverages useFormState and useFormStatus to manage forms and handle button interactions, ensuring seamless user experiences and maintaining data integrity.
+
+### Server Actions
+
+Server actions are used for validating forms and creating records in the database, optimizing backend operations for efficiency.
+
 ## Contributions
 
 Contributions are welcome. If you would like to contribute, please follow these steps:
