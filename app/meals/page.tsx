@@ -1,9 +1,13 @@
 import { Suspense } from "react";
 import Link from "next/link";
-
+import { MealsFetch } from "@/components/meals";
 
 import classes from "./page.module.css";
-import { MealsFetch } from "@/components/meals";
+
+export const medatada = {
+  title: 'All meals',
+  description: 'Delicious meals, shared by a food-loving community'
+}
 
 export default function MealsPage() {
   return (
