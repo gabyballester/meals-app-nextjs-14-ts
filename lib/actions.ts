@@ -1,34 +1,20 @@
 "use server";
 
 import { redirect } from "next/navigation";
-import { saveMeal } from "./mealApi";
+import { revalidatePath } from "next/cache";
+
 import { MealFormData } from "@/types";
+import { saveMeal } from "@/lib/mealApi";
 
-const isValidString = (value: string): value is string => {
-  return typeof value === "string" && value.trim().length > 0;
-};
+function isInvalidText(text: string) {
+  return !text || text.trim() === "";
+}
 
-const isValidFile = (value: File): value is File => {
-  return value instanceof File && value.size > 0;
-};
-
-const isValidEmail = (value: string): boolean => {
-  return /\S+@\S+\.\S+/.test(value);
-};
-
-const validateMealForm = (mealForm: MealFormData): boolean => {
-  return (
-    isValidString(mealForm.title) &&
-    isValidString(mealForm.summary) &&
-    isValidString(mealForm.instructions) &&
-    isValidFile(mealForm.image) &&
-    isValidString(mealForm.creator) &&
-    isValidEmail(mealForm.creator_email)
-  );
-};
-
-export const shareMeal = async (formData: FormData) => {
-  const mealForm: MealFormData = {
+export const shareMealAction = async (
+  prevState: { message: string },
+  formData: FormData
+) => {
+  const meal: MealFormData = {
     title: formData.get("title") as string,
     summary: formData.get("summary") as string,
     instructions: formData.get("instructions") as string,
@@ -37,11 +23,22 @@ export const shareMeal = async (formData: FormData) => {
     creator_email: formData.get("email") as string,
   };
 
-  if (!validateMealForm(mealForm)) {
-    console.error("Validation failed, please check the form data.");
-    throw new Error("Invalid input");
+  if (
+    isInvalidText(meal.title) ||
+    isInvalidText(meal.summary) ||
+    isInvalidText(meal.instructions) ||
+    isInvalidText(meal.creator) ||
+    isInvalidText(meal.creator_email) ||
+    !meal.creator_email.includes("@") ||
+    !meal.image ||
+    meal.image.size === 0
+  ) {
+    return {
+      message: "Invalid input.",
+    };
   }
 
-  await saveMeal(mealForm);
+  await saveMeal(meal);
+  revalidatePath("/meals");
   redirect("/meals");
 };
