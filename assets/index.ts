@@ -9,6 +9,7 @@ import tomatoSaladImg from "@/assets/images/tomato-salad.jpg";
 import mealIcon from "@/assets/icons/meal.png";
 import communityIcon from "@/assets/icons/community.png";
 import eventsIcon from "@/assets/icons/events.png";
+import trashIcon from "@/assets/icons/trash.png";
 
 export const logo = {
   src: logoImg,
@@ -63,4 +64,8 @@ export const community = {
 export const events = {
   src: eventsIcon,
   alt: "A crowd of people at a cooking event",
+};
+export const trash = {
+  src: trashIcon,
+  alt: "An icon with trash to delete items",
 };

@@ -13,6 +13,14 @@ export type MealType = {
   summary: string;
   creator: string;
   instructions: string;
+  creator_email: string;
+};
+
+export type MealFormData = {
+  title: string;
+  summary: string;
+  instructions: string;
+  image: File;
   creator: string;
   creator_email: string;
 };

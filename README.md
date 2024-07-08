@@ -45,6 +45,8 @@ The platform ensures high code quality and follows best practices.
 - **TypeScript:** Adding strong static types and advanced features to improve large-scale development and code maintainability.
 - **SQLite:** As the database to provide API data.
 - **Database Interaction:** SQL Queries to interact with the SQLite database, allowing efficient CRUD operations.
+- **Slugify:** Used to create URL-friendly slugs from strings.
+- **XSS (Cross-Site Scripting):** Helps handle fields containing HTML to prevent security vulnerabilities.
 
 ## UX/UI
 
