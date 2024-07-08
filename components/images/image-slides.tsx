@@ -2,7 +2,26 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { sliderImages } from "./source";
+
+import {
+  burger,
+  curry,
+  dumplings,
+  macncheese,
+  pizza,
+  schnitzel,
+  tomatoSalad,
+} from "@/assets";
+
+export const sliderImages = [
+  burger,
+  curry,
+  dumplings,
+  macncheese,
+  pizza,
+  schnitzel,
+  tomatoSalad,
+];
 
 import classes from "./image-slideshow.module.css";
 

@@ -1,8 +1,9 @@
 import { Suspense } from "react";
 import Link from "next/link";
-import { MealsFetch } from "@/components/meals";
+
 
 import classes from "./page.module.css";
+import { MealsFetch } from "@/components/meals";
 
 export default function MealsPage() {
   return (

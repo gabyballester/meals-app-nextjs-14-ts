@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { ImageSlideshow } from "@/components";
+
 
 import classes from "./page.module.css";
+import { ImageSlideshow } from "@/components/images";
 
 const links = [
   { href: "/community", text: "Join the Community" },

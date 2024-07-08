@@ -1,14 +1,11 @@
 "use client";
 
-import { useFormStatus } from "react-dom";
 import { shareMeal } from "@/lib/actions";
-import { ImagePicker } from "@/components/meals";
+import { ImagePicker, SubmitButton } from "@/components/meals";
 
 import classes from "./page.module.css";
 
 export default function ShareMealPage() {
-  const status = useFormStatus();
-
   return (
     <>
       <header className={classes.header}>
@@ -73,7 +70,7 @@ export default function ShareMealPage() {
           </p>
           <ImagePicker label={"Your image"} name={"image"} />
           <p className={classes.actions}>
-            <button type="submit">Share Meal</button>
+            <SubmitButton />
           </p>
         </form>
       </main>
