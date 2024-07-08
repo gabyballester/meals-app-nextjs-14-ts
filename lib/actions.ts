@@ -9,7 +9,11 @@ const isValidString = (value: string): value is string => {
 };
 
 const isValidFile = (value: File): value is File => {
-  return value instanceof File;
+  return value instanceof File && value.size > 0;
+};
+
+const isValidEmail = (value: string): boolean => {
+  return /\S+@\S+\.\S+/.test(value);
 };
 
 const validateMealForm = (mealForm: MealFormData): boolean => {
@@ -19,7 +23,7 @@ const validateMealForm = (mealForm: MealFormData): boolean => {
     isValidString(mealForm.instructions) &&
     isValidFile(mealForm.image) &&
     isValidString(mealForm.creator) &&
-    isValidString(mealForm.creator_email)
+    isValidEmail(mealForm.creator_email)
   );
 };
 
@@ -35,7 +39,7 @@ export const shareMeal = async (formData: FormData) => {
 
   if (!validateMealForm(mealForm)) {
     console.error("Validation failed, please check the form data.");
-    return;
+    throw new Error("Invalid input");
   }
 
   await saveMeal(mealForm);

@@ -34,7 +34,7 @@ export const getMeals = async (): Promise<MealType[] | []> => {
 export const saveMeal = async (mealForm: MealFormData) => {
   const slug = slugify(mealForm.title, { lower: true });
 
-  // image save and strcucture management
+  // image strcucture and save management
   const imageFile = mealForm.image as File;
   const extension = imageFile.name.split(".").pop();
   const fileName = `${slug}.${extension}`;
