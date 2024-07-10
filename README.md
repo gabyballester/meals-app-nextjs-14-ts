@@ -2,7 +2,7 @@
 
 ## Descripcion
 
-Meal App is an educational project to demonstrate knowledge of Next.js. It allows users to order food through the app.
+Meals App is a Tech Assessment project to demonstrate knowledge of Next.js. It allows users to order food through the app.
 
 ## Getting Started
 
